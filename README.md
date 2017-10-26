@@ -29,7 +29,10 @@ Vulnerability #2: __________________
 
 ## Green
 
-Vulnerability #1: __________________
+Vulnerability #1: Cross-Site Scripting (XSS)
+  - [x] Summary: The feedback field is vulnerable to Stored XSS attacks
+  - [x] GIF Walkthrough: <img src='https://i.imgur.com/CQbR5hz.gif' title='GIF Walkthrough' width='' alt='GIF Walkthrough' />
+  - [x] Steps to recreate: Enter a simple script command in the feedback field such as <script>alert('Zach Puderbach found the XSS!');</script> and submit. Then when an admin/user goes to view the feedback forms, the script is executed and a popup appears
 
 Vulnerability #2: __________________
 
@@ -38,8 +41,15 @@ Vulnerability #2: __________________
 
 Vulnerability #1: __________________
 
+RED ALLOWS FOR REUSE OF TOKENS IN CONTACT PHP
+
 Vulnerability #2: __________________
 
+##Other
+
+Vulnerability #1: Cross-Site Scripting (XSS)
+
+- [x] Summary: All three sites are vulnerable to Reflected attacks under the territory field
 
 ## Notes
 
