@@ -48,10 +48,12 @@ Vulnerability #1: Insecure Direct Object Reference (IDOR)
   - [x] GIF Walkthrough: <img src='https://i.imgur.com/YCN6bga.gif' title='GIF Walkthrough' width='' alt='GIF Walkthrough' />
   - [x] Steps to recreate: Go the the "Find a Salesperson" Page and click on any salesperson. Directly change the ID number to 10 or 11 to see salespeople that aren't supposed to be public.
 
-Vulnerability #2: __________________
+Vulnerability #2: Cross-Site Request Forgery (CSRF)
 
-RED ALLOWS FOR REUSE OF TOKENS IN CONTACT PHP
-
+  - [x] Summary: The CSRF token isn't checked properly when submitting post requests, allowing anyone knowing the URL and Session ID of a logged in admin to make admin changes
+  - [x] GIF Walkthrough: <img src='https://i.imgur.com/PYqhVPL.gif' title='GIF Walkthrough' width='' alt='GIF Walkthrough' />
+  - [x] Steps to recreate: Obtain the Session ID of a logged in admin, create a post request to edit a state (In my case Alaska), you can put anything in the csrf token field since it isn't properly checked. Then just submit the POST request. The change will only notice once the page that was changed is reloaded.
+  
 ##Other
 
 Vulnerability #1: Cross-Site Scripting (XSS)
