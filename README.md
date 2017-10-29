@@ -34,16 +34,23 @@ Vulnerability #1: Cross-Site Scripting (XSS)
   - [x] GIF Walkthrough: <img src='https://i.imgur.com/CQbR5hz.gif' title='GIF Walkthrough' width='' alt='GIF Walkthrough' />
   - [x] Steps to recreate: Enter a simple script command in the feedback field such as <script>alert('Zach Puderbach found the XSS!');</script> and submit. Then when an admin/user goes to view the feedback forms, the script is executed and a popup appears
 
-Vulnerability #2: __________________
+Vulnerability #2: Username Enumeration 
 
+  - [x] Summary: The login error message shows "Log in was unsuccessful." (Not bolded) when the user does not exist, and "**Log in was unsuccessful.**" (Bolded) if the user exists
+  - [x] GIF Walkthrough: <img src='https://i.imgur.com/MbEQpvw.gif' title='GIF Walkthrough' width='' alt='GIF Walkthrough' />
+  - [x] Steps to recreate: Go to the login page on the Green machine, and enter existing usernames (as a baseline), and note the error message is bolded. To test if a username exists or not, just enter in a username and anything in the password field, and if the error message is bold, the username exists, otherwise if it is not bolded, it doesn't exist
 
 ## Red
 
-Vulnerability #1: __________________
+Vulnerability #1: Insecure Direct Object Reference (IDOR)
 
-RED ALLOWS FOR REUSE OF TOKENS IN CONTACT PHP
+  - [x] Summary: The ID field on the salesperson page is directly accessible, allowing anyone to change it and view all salespeople
+  - [x] GIF Walkthrough: <img src='https://i.imgur.com/YCN6bga.gif' title='GIF Walkthrough' width='' alt='GIF Walkthrough' />
+  - [x] Steps to recreate: Go the the "Find a Salesperson" Page and click on any salesperson. Directly change the ID number to 10 or 11 to see salespeople that aren't supposed to be public.
 
 Vulnerability #2: __________________
+
+RED ALLOWS FOR REUSE OF TOKENS IN CONTACT PHP
 
 ##Other
 
