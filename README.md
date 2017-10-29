@@ -2,7 +2,7 @@
 
 # Project 8 - Pentesting Live Targets
 
-Time spent: **X** hours spent in total
+Time spent: **12** hours spent in total
 
 > Objective: Identify vulnerabilities in three different versions of the Globitek website: blue, green, and red.
 
@@ -24,8 +24,12 @@ Vulnerability #1: SQL Injection (SQLi)
   - [x] Steps to recreate: Heads up, the GIF is a long one. The short version is, I was looking through GET URL fields, and found the salesperson one. I first tested to see if it was vulnerable with a simple "id=3' or '1'='1" until I got the webpage to "break" when I used "id=3 or '1'='1". This revealed "Database Query Failed" showing the database field was vulnerable. I then ran the full URL through sqlmap for confirmation and database information
   - [x] sqlmap results: Database type = MySql, Databases found: [*] globitek_blue, globitek_green, globitek_red, information_schema, mysql, performance_schema, sys
 
-Vulnerability #2: __________________
+Vulnerability #2: Session Hijacking/Fixation
 
+  - [x] Summary: The blue machine is vulnerable to session highjacking/fixation using the given PHP change session tool, allowing admin access. The first GIF shows session fixation, the second shows session hijacking. In both scenarios the Chrome browser is the attacker, and the Firefox browser is the victim
+  - [x] GIF Walkthrough: <img src='https://i.imgur.com/1FpJZAy.gif' title='GIF Walkthrough' width='' alt='GIF Walkthrough' />
+  - [x] GIF Walkthrough: <img src='https://i.imgur.com/Chq9oxx.gif' title='GIF Walkthrough' width='' alt='GIF Walkthrough' />
+  - [x] Steps to recreate: Follow the instructions listed on the Assignment week 8 page "Use two different web browsers (e.g., Firefox and Chrome). Let one browser be the attacker and the other the target. Choose if you want to attempt a session hijacking or session fixation. For hijacking, log the target in first, then give the logged-in session ID to the attacker. For fixation, get a session ID for the attacker, give it to the target, then the target will log in. In both cases, the attacker should now have access to the staff area."
 
 ## Green
 
@@ -53,12 +57,6 @@ Vulnerability #2: Cross-Site Request Forgery (CSRF)
   - [x] Summary: The CSRF token isn't checked properly when submitting post requests, allowing anyone knowing the URL and Session ID of a logged in admin to make admin changes
   - [x] GIF Walkthrough: <img src='https://i.imgur.com/PYqhVPL.gif' title='GIF Walkthrough' width='' alt='GIF Walkthrough' />
   - [x] Steps to recreate: Obtain the Session ID of a logged in admin, create a post request to edit a state (In my case Alaska), you can put anything in the csrf token field since it isn't properly checked. Then just submit the POST request. The change will only notice once the page that was changed is reloaded.
-  
-##Other
-
-Vulnerability #1: Cross-Site Scripting (XSS)
-
-- [x] Summary: All three sites are vulnerable to Reflected attacks under the territory field
 
 ## Notes
 
